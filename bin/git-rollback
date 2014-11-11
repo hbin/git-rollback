@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby -w
+# -*- coding: utf-8 -*-
+
+require 'git-rollback'
+
+command_ran = false
+
+opts = Slop.parse!(help: true) do
+  description 'Git rollback commits'
+
+  on '--soft', 'Delete the commit but leave all your changed files.'
+  on '--hard', 'Git rid of any changes to tracked files.'
+
+  on '-v', '--version', 'Print the version' do
+    puts "Version #{GitRollback::VERSION}"
+
+    command_ran = true
+  end
+end
+
+if not command_ran
+  GitRollback.new.run(opts, ARGV)
+end
