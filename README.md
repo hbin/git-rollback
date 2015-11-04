@@ -1,4 +1,6 @@
-# git-rollback(alpha)
+[![Gem Version](https://badge.fury.io/rb/git-rollback.svg)](https://badge.fury.io/rb/git-rollback)
+
+# git-rollback
 
 Easily rollback last several commits.
 
